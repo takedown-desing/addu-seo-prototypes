@@ -1,0 +1,103 @@
+/* Стили внутренних страниц услуг — надстройка над styles.css (та же палитра/типографика) */
+
+.inner-page .header { position: sticky; top: 0; background: #fff; }
+
+.page-hero { background: linear-gradient(135deg, #0b1c33 0%, #123056 60%, #0066FF 130%); color: #fff; padding: 48px 0 56px; }
+
+/* Ширину задаёт универсальный .container (styles.css) — без локальных исключений */
+.page-hero__title { color: #fff; margin: 10px 0 14px; }
+.page-hero__lead { font-size: 18px; line-height: 1.6; opacity: .95; }
+.page-hero__lead a { color: #9cc4ff; }
+.page-hero__actions { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+.page-hero .btn--outline { border-color: rgba(255,255,255,.6); color: #fff; }
+
+.breadcrumbs { font-size: 13px; opacity: .85; display: flex; gap: 8px; flex-wrap: wrap; }
+.breadcrumbs a { color: #cfe0ff; text-decoration: none; }
+.breadcrumbs a:hover { text-decoration: underline; }
+.breadcrumbs span[aria-current] { color: #fff; }
+
+.page-content { padding-top: 34px; padding-bottom: 64px; }
+.page-content > p { font-size: 16.5px; line-height: 1.65; margin: 14px 0; color: #2a2f34; }
+.page-content .heading2 { margin: 44px 0 6px; }
+.page-h3 { font-size: 19px; margin: 26px 0 6px; color: #14181c; }
+
+.page-list { margin: 12px 0 12px 4px; padding-left: 22px; }
+.page-list li { margin: 7px 0; line-height: 1.6; }
+
+.table-wrap { overflow-x: auto; margin: 18px 0; }
+.page-table { border-collapse: collapse; width: 100%; font-size: 15px; background: #fff; }
+.page-table th { background: #f2f5f9; text-align: left; padding: 10px 14px; border: 1px solid #e2e7ee; font-weight: 700; }
+.page-table td { padding: 10px 14px; border: 1px solid #e2e7ee; vertical-align: top; line-height: 1.5; }
+.page-table tr:nth-child(even) td { background: #fafbfd; }
+
+.page-figure { margin: 22px 0; }
+.page-figure img { width: 100%; height: auto; border-radius: 12px; display: block; }
+.page-figure--info img { border: 1px solid #e2e7ee; background: #fff; }
+.page-figure figcaption { font-size: 13px; color: #666d73; margin-top: 8px; }
+
+mark.tbd { background: #fff3bf; color: #7a5a00; padding: 0 6px; border-radius: 4px; font-size: .92em; }
+
+.page-content .cta-horizontal { margin: 30px 0; }
+.page-content .faq-list { margin-top: 10px; }
+
+/* Каталог услуг */
+.catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; margin: 26px 0 40px; }
+.catalog-card { border: 1px solid #e2e7ee; border-radius: 14px; padding: 22px; background: #fff; }
+.catalog-card__title { font-size: 21px; margin: 0 0 8px; }
+.catalog-card__title a { color: #14181c; text-decoration: none; }
+.catalog-card__title a:hover { color: #0066FF; }
+.catalog-card__kids { font-size: 13.5px; line-height: 1.7; color: #666d73; }
+.catalog-card__kids a { color: #0066FF; text-decoration: none; }
+
+/* Футер: silo-колонки */
+.footer__grid--silo { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 22px; }
+.footer__grid--silo h4 a, .footer__grid--silo .footer__h a { color: inherit; text-decoration: none; }
+
+@media (max-width: 700px) {
+  .page-hero { padding: 34px 0 40px; }
+  .page-content { padding-top: 22px; }
+}
+
+/* v5: мобильные hero-CTA — кнопки в столбик, текст в одну строку */
+@media (max-width: 560px) {
+  .page-hero__actions { display: flex; flex-direction: column; align-items: stretch; gap: 10px; }
+  .page-hero__actions .btn { width: 100%; font-size: 14px; padding-left: 10px; padding-right: 10px; }
+}
+
+/* v7: логотип из двух частей (иконка + словомарка) */
+.logo { gap: 10px; }
+.logo__icon { height: 40px; width: auto; display: block; }
+.logo__word { height: 21px; width: auto; display: block; }
+
+/* v9: h4 навигации/футера → div, CTA-заголовок → p (основные стили расширены в styles.css) */
+.footer__h a { color: inherit; text-decoration: none; }
+.footer__grid--silo .footer__h a { color: inherit; }
+
+/* v9: страница кейсов */
+.case-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin: 8px 0 20px; }
+.case-card { display: flex; flex-direction: column; border: 1px solid var(--border, #e2e7f0); border-radius: 10px; padding: 24px 26px; text-decoration: none; color: inherit; transition: box-shadow .2s, transform .2s, border-color .2s; background: #fff; }
+.case-card:hover { box-shadow: 0 8px 28px rgba(11,61,145,.10); transform: translateY(-2px); border-color: var(--blue, #0b3d91); }
+.case-card__tag { display: inline-block; align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--blue, #0b3d91); background: #eef3fb; padding: 4px 10px; border-radius: 4px; margin-bottom: 14px; }
+.case-card__title { font-size: 20px; line-height: 1.3; margin: 0 0 10px; color: #14213d; }
+.case-card__descr { font-size: 14px; line-height: 1.55; color: var(--gray-600, #5a6478); margin: 0 0 16px; flex: 1; }
+.case-card__more { font-weight: 600; color: var(--blue, #0b3d91); font-size: 14px; }
+.case-meta { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; margin: 4px 0 22px; }
+.case-meta__item { font-size: 13px; color: var(--gray-600, #5a6478); position: relative; padding-left: 16px; }
+.case-meta__item::before { content: ""; position: absolute; left: 4px; top: 50%; width: 4px; height: 4px; border-radius: 50%; background: var(--blue, #0b3d91); transform: translateY(-50%); }
+@media (max-width: 700px) { .case-grid { grid-template-columns: 1fr; } }
+
+/* v11: инфографики в кейсе — на всю ширину контента, светлый фон */
+.page-figure--chart { margin: 22px 0; }
+.page-figure--chart img { width: 100%; height: auto; border: 1px solid var(--border, #e2e7f0); border-radius: 12px; background: #fff; }
+
+/* v11: HTML-карта сайта */
+.sitemap-cols { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; margin: 8px 0 20px; }
+.sitemap-cols h2 { font-size: 17px; color: var(--blue, #0b3d91); margin: 0 0 12px; }
+.sitemap-tree { list-style: none; padding: 0; margin: 0; }
+.sitemap-tree > li { margin: 0 0 8px; }
+.sitemap-tree > li > a { font-weight: 600; }
+.sitemap-tree ul { list-style: none; padding-left: 16px; margin: 6px 0 12px; border-left: 2px solid var(--border, #e2e7f0); }
+.sitemap-tree ul li { margin: 4px 0; }
+.sitemap-tree a { color: var(--text, #1a2233); text-decoration: none; }
+.sitemap-tree a:hover { color: var(--blue, #0b3d91); text-decoration: underline; }
+@media (max-width: 760px) { .sitemap-cols { grid-template-columns: 1fr; } }
