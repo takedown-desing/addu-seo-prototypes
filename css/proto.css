@@ -144,3 +144,6 @@
 .skel-block { border:1.5px dashed #c9cede; border-radius:12px; padding:26px 20px; color:#7a8099; font-size:15px; background:repeating-linear-gradient(45deg,#fafbfe,#fafbfe 12px,#f4f6fb 12px,#f4f6fb 24px); }
 .skel-block span { font-size:12px; opacity:.7; }
 .small-note { font-size:13px; opacity:.7; }
+
+.metric-case__descr { font-size: 13.5px; opacity: .8; margin: 0 0 12px; }
+.metric-case__btn { display: inline-block; margin-top: 14px; font-size: 13.5px; padding: 8px 16px; }
