@@ -147,3 +147,13 @@
 
 .metric-case__descr { font-size: 13.5px; opacity: .8; margin: 0 0 12px; }
 .metric-case__btn { display: inline-block; margin-top: 14px; font-size: 13.5px; padding: 8px 16px; }
+
+/* --- Спросите нейросеть (сквозной блок услуг) --- */
+.ai-ask { border: 1px solid var(--border,#e3e6ee); border-radius: 16px; padding: 22px 24px; margin: 28px 0; background: #f8fafc; }
+.ai-ask__head b { font-size: 17px; }
+.ai-ask__head p { margin: 4px 0 14px; font-size: 14px; opacity: .75; }
+.ai-ask__row { display: flex; flex-wrap: wrap; gap: 8px; }
+.ai-ask__btn { background: #fff; color: #475569; font-size: 13.5px; text-decoration: none; min-height: 36px;
+  padding: 9px 16px; border-radius: 20px; display: inline-flex; align-items: center; border: 1px solid var(--border,#e3e6ee); }
+.ai-ask__btn::before { content: "✦"; margin-right: 7px; color: var(--accent,#f5a623); }
+.ai-ask__btn:hover { border-color: var(--accent,#f5a623); color: #1a1a2e; }
