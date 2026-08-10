@@ -260,8 +260,7 @@ document.querySelectorAll('.quiz__opts').forEach(function(g){
   });
 });
 document.querySelectorAll('.faq-question').forEach(function(q){
-  q.addEventListener('click', function(){ q.parentElement.classList.toggle('is-open');
-    var a=q.nextElementSibling; a.style.display = a.style.display==='block' ? 'none' : 'block'; });
+  q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });
 });
 </script>
 </body>

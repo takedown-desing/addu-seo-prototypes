@@ -113,3 +113,6 @@
   .metric-case__grid { grid-template-columns: 1fr 1fr; }
   .tariff__for { min-height: 0; }
 }
+
+/* Прототип живёт без main.js: показываем step-up блоки сразу */
+.step-up { opacity: 1 !important; transform: none !important; }
