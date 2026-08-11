@@ -120,21 +120,36 @@
 
     <!-- БЛОК 6 (уникальный для Авито, шаблон — сквозной): квиз -->
     <div class="quiz" id="quiz">
-      <h3>Рассчитайте стоимость продвижения за 30 секунд</h3>
-      <div class="quiz__hint">Мини-квиз: 3 вопроса — и мы пришлём расчёт и бесплатный разбор вашего кабинета. Такого нет ни у одного конкурента.</div>
-      <div class="quiz__qs">1. Что продаёте?</div>
-      <div class="quiz__opts" data-q="1">
-        <button class="quiz__opt">Товары</button><button class="quiz__opt">Услуги</button><button class="quiz__opt">Недвижимость</button><button class="quiz__opt">Другое</button>
+      <h3>Рассчитайте стоимость продвижения за 60 секунд</h3>
+      <div class="quiz__hint">5 коротких вопросов — пришлём расчёт тарифа и бесплатный разбор вашего кабинета. Такого квиза нет ни у одного конкурента.</div>
+      <div class="quiz-progress"><div class="quiz-progress__bar" id="quizBar" style="width:20%"></div></div>
+      <div class="quiz-step is-active" data-step="1">
+        <div class="quiz__qs">1/5. Что продаёте?</div>
+        <div class="quiz__opts"><button class="quiz__opt">Товары</button><button class="quiz__opt">Услуги</button><button class="quiz__opt">Недвижимость</button><button class="quiz__opt">Авто</button><button class="quiz__opt">Другое</button></div>
       </div>
-      <div class="quiz__qs">2. Уже продвигаетесь на Авито?</div>
-      <div class="quiz__opts" data-q="2">
-        <button class="quiz__opt">Да, есть кабинет</button><button class="quiz__opt">Размещаемся без продвижения</button><button class="quiz__opt">Ещё не начинали</button>
+      <div class="quiz-step" data-step="2">
+        <div class="quiz__qs">2/5. Где ваши клиенты?</div>
+        <div class="quiz__opts"><button class="quiz__opt">Москва и МО</button><button class="quiz__opt">Санкт-Петербург</button><button class="quiz__opt">Один регион</button><button class="quiz__opt">Вся Россия</button></div>
       </div>
-      <div class="quiz__final" id="quizFinal">
-        <div class="quiz__qs">3. Куда прислать расчёт и разбор?</div>
-        <input type="text" placeholder="Телефон или Telegram" aria-label="Контакт">
-        <button class="btn btn--accent" onclick="alert('Прототип: здесь заявка уйдёт менеджеру/партнёру')">Получить расчёт</button>
+      <div class="quiz-step" data-step="3">
+        <div class="quiz__qs">3/5. Что с Авито сейчас?</div>
+        <div class="quiz__opts"><button class="quiz__opt">Есть кабинет, продвигаемся</button><button class="quiz__opt">Размещаемся без продвижения</button><button class="quiz__opt">Ещё не начинали</button><button class="quiz__opt">Был негативный опыт</button></div>
       </div>
+      <div class="quiz-step" data-step="4">
+        <div class="quiz__qs">4/5. Бюджет на рекламу Авито в месяц (без тарифа ведения)?</div>
+        <div class="quiz__opts"><button class="quiz__opt">До 20 000 ₽</button><button class="quiz__opt">20–50 тыс. ₽</button><button class="quiz__opt">50–150 тыс. ₽</button><button class="quiz__opt">Пока не знаю</button></div>
+      </div>
+      <div class="quiz-step" data-step="5">
+        <div class="quiz__qs">5/5. Куда прислать расчёт и разбор кабинета?</div>
+        <div class="quiz__summary" id="quizSummary"></div>
+        <div class="quiz__final is-visible">
+          <input type="text" placeholder="Телефон или Telegram" aria-label="Контакт">
+          <button class="btn btn--accent" onclick="alert('Прототип: заявка с ответами квиза уйдёт менеджеру/партнёру')">Получить расчёт</button>
+        </div>
+        <p class="quiz__hint" style="margin-top:10px">Бонус за прохождение: PDF-чек-лист «12 причин, почему объявления не в топе Авито».</p>
+      </div>
+      <button class="quiz-back" id="quizBack" style="display:none">← Назад</button>
+    </div>
     </div>
 
     <!-- БЛОК 7 (сквозной): этапы -->
@@ -221,14 +236,34 @@
 <footer class="footer"><div class="container"><div class="footer__grid footer__grid--silo"><div><div class="footer__h"><a href="/addu-seo-prototypes/razrabotka-saytov/">Разработка сайтов</a></div><ul><li><a href="/addu-seo-prototypes/razrabotka-saytov/korporativnyj-sajt/">Корпоративный сайт</a></li><li><a href="/addu-seo-prototypes/razrabotka-saytov/internet-magazin/">Интернет-магазин</a></li><li><a href="/addu-seo-prototypes/razrabotka-saytov/lending/">Разработка лендингов</a></li><li><a href="/addu-seo-prototypes/razrabotka-saytov/sajty-s-gospodderzhkoj/">Сайты с господдержкой</a></li><li><a href="/addu-seo-prototypes/razrabotka-saytov/sajty-v-rassrochku/">Сайты в рассрочку</a></li><li><a href="/addu-seo-prototypes/razrabotka-saytov/importozameshchenie/">Импортозамещение: Битрикс + PostgreSQL</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/">Поддержка сайтов</a></div><ul><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajta-na-bitriks/">Поддержка на 1С-Битрикс</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajtov-na-wordpress/">Поддержка на WordPress</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajta-na-modx/">Поддержка на MODX</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajtov-na-joomla/">Поддержка на Joomla</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajta-na-drupal/">Поддержка на Drupal</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajtov-na-tilde/">Поддержка на Тильда</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajtov-na-opencart/">Поддержка на OpenCart</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/podderzhka-sajtov-na-frejmvorkah/">Поддержка на фреймворках (Laravel/Vue)</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/kontent-soprovozhdenie-sajtov/">Контентная поддержка</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/tipy-sajtov/">Поддержка по типам сайтов</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/vidy-rabot/">Виды работ по поддержке</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/populyarnye-zadachi/">Популярные задачи</a></li><li><a href="/addu-seo-prototypes/tehnicheskaya-podderzhka-saytov/kejsy/">Кейсы поддержки</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/prodvizhenie-sajta/">Продвижение сайтов</a></div><ul><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/seo/">Поисковое продвижение SEO</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/povedencheskie-faktory/">Поведенческие факторы</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/kontekstnaya-reklama/">Контекстная реклама</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/targetirovannaya-reklama/">Таргетированная реклама</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/yandex-karty/">Продвижение в Яндекс.Картах</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/yandex-biznes/">Яндекс.Бизнес</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/lidogeneracziya/">Лидогенерация</a></li><li><a href="/addu-seo-prototypes/prodvizhenie-sajta/serm/">Управление репутацией (SERM)</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/prodvizhenie-na-avito/">Продвижение на Авито</a></div><ul></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/marketing/">Маркетинг</a></div><ul><li><a href="/addu-seo-prototypes/marketing/audit-marketinga/">Аудит маркетинга</a></li><li><a href="/addu-seo-prototypes/marketing/autsorsing-marketinga/">Аутсорс маркетинга</a></li><li><a href="/addu-seo-prototypes/marketing/marketingovye-issledovaniya/">Маркетинговые исследования</a></li><li><a href="/addu-seo-prototypes/marketing/marketingovaya-strategiya/">Маркетинговая стратегия</a></li><li><a href="/addu-seo-prototypes/marketing/videomarketing/">Видеомаркетинг</a></li><li><a href="/addu-seo-prototypes/marketing/email-marketing/">Email-маркетинг</a></li><li><a href="/addu-seo-prototypes/marketing/autrich/">Аутрич</a></li><li><a href="/addu-seo-prototypes/marketing/geomarketing/">Геомаркетинг</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/socialnye-seti/">Социальные сети</a></div><ul><li><a href="/addu-seo-prototypes/socialnye-seti/smm-prodvizhenie/">SMM-продвижение</a></li><li><a href="/addu-seo-prototypes/socialnye-seti/vedenie-socsetej/">Ведение соцсетей</a></li><li><a href="/addu-seo-prototypes/socialnye-seti/upakovka-v-socsetyah/">Упаковка в соцсетях</a></li><li><a href="/addu-seo-prototypes/socialnye-seti/videokanal-youtube/">Видеоканал YouTube</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/dizajn/">Дизайн</a></div><ul><li><a href="/addu-seo-prototypes/dizajn/firmennyj-stil/">Фирменный стиль</a></li><li><a href="/addu-seo-prototypes/dizajn/razrabotka-logotipa/">Логотипы</a></li><li><a href="/addu-seo-prototypes/dizajn/brendbuk/">Брендбук</a></li><li><a href="/addu-seo-prototypes/dizajn/dizajn-sajtov/">Дизайн сайтов</a></li><li><a href="/addu-seo-prototypes/dizajn/dizajn-prezentacij/">Дизайн презентаций</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/avtomatizaciya/">Автоматизация бизнеса</a></div><ul><li><a href="/addu-seo-prototypes/avtomatizaciya/vnedrenie-bitrix24/">Внедрение CRM Битрикс24</a></li><li><a href="/addu-seo-prototypes/avtomatizaciya/vnedrenie-amocrm/">Внедрение amoCRM</a></li><li><a href="/addu-seo-prototypes/avtomatizaciya/vnedrenie-1c/">Внедрение 1С</a></li><li><a href="/addu-seo-prototypes/avtomatizaciya/licenzii-crm/">Продажа лицензий CRM</a></li><li><a href="/addu-seo-prototypes/avtomatizaciya/skvoznaya-analitika/">Сквозная аналитика</a></li><li><a href="/addu-seo-prototypes/avtomatizaciya/biznes-processy/">Разработка бизнес-процессов</a></li></ul></div><div><div class="footer__h"><a href="/addu-seo-prototypes/resheniya/">Отраслевые решения</a></div><ul><li><a href="/addu-seo-prototypes/resheniya/proizvodstvo/">Для производителей</a></li><li><a href="/addu-seo-prototypes/resheniya/nedvizhimost/">Для недвижимости</a></li><li><a href="/addu-seo-prototypes/resheniya/medicina/">Для медицины</a></li><li><a href="/addu-seo-prototypes/resheniya/onlajn-torgovlya/">Для онлайн-торговли</a></li></ul></div><div><div class="footer__h">Компания</div><ul><li><a href="/addu-seo-prototypes/kompaniya/">Компания</a></li><li><a href="/addu-seo-prototypes/proekty/">Проекты</a></li><li><a href="/addu-seo-prototypes/blog/">Блог</a></li><li><a href="/addu-seo-prototypes/ceny/">Цены</a></li><li><a href="/addu-seo-prototypes/kontakty/">Контакты</a></li><li><a href="/addu-seo-prototypes/sozvon-checklist/">Сверка с созвоном</a></li></ul></div></div><div class="footer__bottom"><span>Прототип нового addu.ru · ветка SEO · все страницы noindex</span><span><a href="/addu-seo-prototypes/sozvon-checklist/">Сверка с созвоном</a></span></div></div></footer>
 
 <script>
-document.querySelectorAll('.quiz__opts').forEach(function(g){
-  g.addEventListener('click', function(e){
-    if(!e.target.classList.contains('quiz__opt')) return;
-    g.querySelectorAll('.quiz__opt').forEach(function(b){b.classList.remove('is-active')});
-    e.target.classList.add('is-active');
-    if(document.querySelectorAll('.quiz__opt.is-active').length >= 2)
-      document.getElementById('quizFinal').classList.add('is-visible');
+(function(){
+  var answers = [];
+  var steps = document.querySelectorAll('.quiz-step');
+  var bar = document.getElementById('quizBar');
+  var back = document.getElementById('quizBack');
+  var cur = 0;
+  function show(i){
+    steps.forEach(function(st, k){ st.classList.toggle('is-active', k === i); });
+    bar.style.width = ((i + 1) * 20) + '%';
+    back.style.display = i > 0 ? 'inline-block' : 'none';
+    if (i === 4) {
+      document.getElementById('quizSummary').innerHTML =
+        'Ваши ответы: ' + answers.map(function(a){ return '<b>' + a + '</b>'; }).join(' · ');
+    }
+    cur = i;
+  }
+  document.querySelectorAll('.quiz-step .quiz__opts').forEach(function(g, idx){
+    g.addEventListener('click', function(e){
+      if (!e.target.classList.contains('quiz__opt')) return;
+      g.querySelectorAll('.quiz__opt').forEach(function(b){ b.classList.remove('is-active'); });
+      e.target.classList.add('is-active');
+      answers[idx] = e.target.textContent.trim();
+      setTimeout(function(){ show(Math.min(idx + 1, 4)); }, 250);
+    });
   });
+  back.addEventListener('click', function(){ show(Math.max(cur - 1, 0)); });
+})();
+
 });
 document.querySelectorAll('.faq-question').forEach(function(q){
   q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });

@@ -174,3 +174,12 @@
 .team-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin:16px 0; text-align:center; }
 .team-card b { display:block; font-size:14px; } .team-card span { font-size:12px; opacity:.65; }
 .rating-row { display:flex; flex-wrap:wrap; gap:14px; margin:14px 0; align-items:center; }
+
+/* --- многошаговый квиз --- */
+.quiz-progress { height:6px; background:rgba(255,255,255,.15); border-radius:3px; margin:0 0 18px; }
+.quiz-progress__bar { height:100%; background:var(--accent,#f5a623); border-radius:3px; transition:width .25s; }
+.quiz-step { display:none; }
+.quiz-step.is-active { display:block; }
+.quiz__summary { font-size:13.5px; opacity:.85; margin:6px 0 12px; }
+.quiz-back { background:none; border:none; color:rgba(255,255,255,.6); cursor:pointer; margin-top:14px; font-size:13px; }
+.quiz-back:hover { color:#fff; }
