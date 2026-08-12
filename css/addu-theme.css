@@ -1,0 +1,148 @@
+/* ==========================================================================
+   ADDU THEME — натягивает фирменный дизайн-макет на блоки прототипа.
+   Палитра из макета: фон #f6f5f2, тёмный #1c1f22, акцент #ffdd00.
+   Ничего не удаляет: все блоки прототипа перекрашиваются под макет.
+   ========================================================================== */
+
+:root{
+  --addu-bg:#f6f5f2;
+  --addu-dark:#1c1f22;
+  --addu-black:#000;
+  --addu-accent:#ffdd00;
+  --addu-white:#fff;
+  --addu-muted:#6b6f76;
+  --addu-line:#e6e4de;
+  --addu-r:20px;
+}
+
+/* ---------- база ---------- */
+body.inner-page{ background:var(--addu-bg); color:var(--addu-dark); }
+.page-main, .page-article{ background:var(--addu-bg); }
+.container{ max-width:1280px; }
+
+h1,h2,h3,h4,.heading1,.heading2{ font-family:"Open Sans",Arial,sans-serif !important; letter-spacing:-.02em; }
+.heading1,h1.page-hero__title{ text-transform:uppercase; font-weight:800; line-height:1.02; }
+.heading2{ font-weight:800; font-size:34px; line-height:1.1; border:0 !important; padding:0 !important; margin:44px 0 18px; }
+.heading2::before{ content:none !important; }
+.page-h3,h3{ font-weight:700; }
+
+/* ---------- шапка ---------- */
+.proto-bar{ background:var(--addu-black); }
+.topnav{ background:var(--addu-bg); border-bottom:1px solid var(--addu-line); }
+.topnav__logo{ text-transform:lowercase; letter-spacing:-.5px; }
+.topnav__logo span{ color:var(--addu-dark); }
+.topnav__links a{ font-weight:600; }
+.mega{ background:var(--addu-white); border-radius:0 0 var(--addu-r) var(--addu-r); box-shadow:0 24px 60px rgba(0,0,0,.14); }
+.mega-h{ font-weight:800; }
+
+/* ---------- hero: тёмный экран как в макете ---------- */
+.page-hero{ background:var(--addu-dark) !important; color:var(--addu-white); border-radius:0 0 var(--addu-r) var(--addu-r);
+  padding:54px 0 60px; position:relative; overflow:hidden; }
+.page-hero::after{ content:""; position:absolute; right:-120px; top:-80px; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,221,0,.35), rgba(255,221,0,0) 62%); pointer-events:none; }
+.page-hero .heading1,.page-hero__title{ color:var(--addu-white); font-size:clamp(30px,4.2vw,62px); }
+.page-hero__lead p{ color:rgba(255,255,255,.78); font-size:17px; max-width:820px; }
+.page-hero .breadcrumbs, .page-hero .breadcrumbs a, .page-hero .breadcrumbs span{ color:rgba(255,255,255,.55); }
+.page-hero .breadcrumbs a:hover{ color:var(--addu-accent); }
+
+/* ---------- кнопки: pill как в макете ---------- */
+.btn{ border-radius:999px !important; font-weight:700; padding:13px 26px; border:1.5px solid transparent; }
+.btn--primary{ background:var(--addu-accent); color:var(--addu-dark); }
+.btn--primary:hover{ background:#ffe633; }
+.btn--outline{ background:transparent; color:var(--addu-dark); border-color:var(--addu-dark); }
+.page-hero .btn--outline{ color:#fff; border-color:rgba(255,255,255,.5); }
+.btn--accent{ background:var(--addu-accent); color:var(--addu-dark); }
+.btn--sm{ padding:8px 18px; }
+
+/* ---------- бейджи доверия ---------- */
+.hero-badge{ background:rgba(255,255,255,.08); color:#fff; border-color:rgba(255,255,255,.22); }
+.hero-badge::before{ color:var(--addu-accent); }
+
+/* ---------- карточки: белые, крупный радиус ---------- */
+.work-card,.metric-case,.tariff,.number,.expert,.ph{ border-radius:var(--addu-r); border:0; background:var(--addu-white);
+  box-shadow:0 2px 0 rgba(0,0,0,.02); }
+.work-card{ padding:26px 24px; }
+.work-card h3{ font-size:17px; margin-bottom:10px; }
+.work-card--link:hover{ box-shadow:0 16px 40px rgba(0,0,0,.10); transform:translateY(-2px); transition:.18s; }
+.work-grid,.metric-cases,.tariffs,.numbers{ gap:20px; }
+
+/* нумерация карточек как в макете (01, 02, 03…) */
+.work-grid{ counter-reset:wc; }
+.work-grid .work-card{ position:relative; padding-top:44px; counter-increment:wc; }
+.work-grid .work-card::before{ content:"0" counter(wc); position:absolute; top:20px; left:24px;
+  font-size:12px; font-weight:800; letter-spacing:1px; color:var(--addu-muted); }
+
+/* ---------- тарифы: выделенный — жёлтый ---------- */
+.tariff{ padding:30px 26px; }
+.tariff--hit{ background:var(--addu-accent); border:0; box-shadow:none; }
+.tariff--hit .tariff__for,.tariff--hit .tariff__price small{ color:rgba(0,0,0,.65); }
+.tariff__hit-label{ background:var(--addu-dark); color:#fff; }
+.tariff__price{ font-size:30px; font-weight:800; }
+.tariff ul li::before{ color:var(--addu-dark); }
+.tariff--hit .btn--primary{ background:var(--addu-dark); color:#fff; }
+
+/* ---------- цифры: тёмная секция ---------- */
+.numbers{ background:var(--addu-dark); border-radius:var(--addu-r); padding:30px 24px; }
+.number{ background:transparent; box-shadow:none; }
+.number__val{ color:var(--addu-accent); font-size:44px; font-weight:800; }
+.number__label{ color:rgba(255,255,255,.6); }
+
+/* ---------- боли, definition, таблицы ---------- */
+.pain{ background:var(--addu-white); border-radius:var(--addu-r); padding:20px 22px; }
+.pain::before{ color:var(--addu-accent); }
+.definition{ background:var(--addu-accent); border:0; border-radius:var(--addu-r); color:var(--addu-dark);
+  padding:24px 26px; font-size:16.5px; font-weight:600; }
+.page-table{ border-radius:var(--addu-r); overflow:hidden; border-collapse:separate; border-spacing:0; background:#fff; }
+.page-table th{ background:var(--addu-dark); color:#fff; border:0; padding:14px 16px; }
+.page-table td{ border:0; border-bottom:1px solid var(--addu-line); padding:13px 16px; }
+.table-wrap{ border-radius:var(--addu-r); overflow:hidden; }
+
+/* ---------- этапы ---------- */
+.step{ border-bottom:1px solid var(--addu-line); padding:18px 0; }
+.step::before{ background:var(--addu-accent); color:var(--addu-dark); font-weight:800; }
+
+/* ---------- FAQ ---------- */
+.faq-list{ background:var(--addu-white); border-radius:var(--addu-r); padding:8px 24px; }
+.faq-item{ border-bottom:1px solid var(--addu-line); }
+.faq-question{ font-weight:700; padding:20px 0; }
+.faq-item.open .faq-question{ color:var(--addu-dark); }
+
+/* ---------- CTA ---------- */
+.cta-horizontal{ background:var(--addu-accent); border-radius:var(--addu-r); padding:30px 32px; border:0; }
+.cta-horizontal__title{ font-weight:800; font-size:22px; color:var(--addu-dark); }
+
+/* ---------- AI-блок и квиз ---------- */
+.ai-ask{ background:var(--addu-white); border:0; border-radius:var(--addu-r); }
+.ai-ask__btn{ border-radius:999px; border-color:var(--addu-line); }
+.ai-ask__btn::before{ color:var(--addu-dark); }
+.ai-inline{ background:var(--addu-white); border-radius:14px; }
+.quiz{ background:var(--addu-dark); border-radius:var(--addu-r); }
+.quiz__opt.is-active,.quiz__opt:hover{ background:var(--addu-accent); border-color:var(--addu-accent); color:var(--addu-dark); }
+.quiz-progress__bar{ background:var(--addu-accent); }
+
+/* ---------- кейсы и фильтры ---------- */
+.case-filters{ background:var(--addu-white); border-radius:var(--addu-r); }
+.case-filter{ border-radius:999px; border-color:var(--addu-line); }
+.case-filter.is-active{ background:var(--addu-accent); border-color:var(--addu-accent); color:var(--addu-dark); }
+.metric-case__num{ color:var(--addu-dark); font-weight:800; }
+.case-tag{ background:#f1efe9; color:#5a5e66; }
+.case-tag--ind{ background:#fff6cc; color:#7a6a10; }
+
+/* ---------- пометки прототипа ---------- */
+.newmark{ background:var(--addu-accent); border-color:var(--addu-accent); color:var(--addu-dark); }
+.new-block{ border-left-color:var(--addu-accent); background:#fffdf0; border-radius:0 var(--addu-r) var(--addu-r) 0; }
+.legend-box,.callout-proto{ border-radius:var(--addu-r); }
+.callout-proto{ border-left-color:var(--addu-accent); }
+
+/* ---------- футер: тёмный как в макете ---------- */
+.footer{ background:var(--addu-dark); color:rgba(255,255,255,.72); border-radius:var(--addu-r) var(--addu-r) 0 0; margin-top:50px; }
+.footer a{ color:rgba(255,255,255,.72); }
+.footer a:hover{ color:var(--addu-accent); }
+.footer__h a{ color:#fff; font-weight:700; }
+.footer__bottom{ border-top:1px solid rgba(255,255,255,.12); color:rgba(255,255,255,.5); }
+
+@media (max-width:760px){
+  .heading2{ font-size:26px; }
+  .page-hero{ padding:36px 0 40px; }
+  .numbers{ padding:20px 14px; }
+}
