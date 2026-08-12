@@ -22,7 +22,9 @@ body.inner-page{ background:var(--addu-bg); color:var(--addu-dark); }
 
 h1,h2,h3,h4,.heading1,.heading2{ font-family:"Open Sans",Arial,sans-serif !important; letter-spacing:-.02em; }
 .heading1,h1.page-hero__title{ text-transform:uppercase; font-weight:800; line-height:1.02; }
-.heading2{ font-weight:800; font-size:34px; line-height:1.1; border:0 !important; padding:0 !important; margin:44px 0 18px; }
+.heading2{ font-weight:800; font-size:34px; line-height:1.1; border:0 !important; padding:0 !important; margin:44px 0 18px;
+  color:var(--addu-dark) !important; background:none !important; }
+.page-content h3,.page-content h4{ color:var(--addu-dark); }
 .heading2::before{ content:none !important; }
 .page-h3,h3{ font-weight:700; }
 
@@ -38,8 +40,9 @@ h1,h2,h3,h4,.heading1,.heading2{ font-family:"Open Sans",Arial,sans-serif !impor
 /* ---------- hero: тёмный экран как в макете ---------- */
 .page-hero{ background:var(--addu-dark) !important; color:var(--addu-white); border-radius:0 0 var(--addu-r) var(--addu-r);
   padding:54px 0 60px; position:relative; overflow:hidden; }
-.page-hero::after{ content:""; position:absolute; right:-120px; top:-80px; width:520px; height:520px; border-radius:50%;
-  background:radial-gradient(circle at 30% 30%, rgba(255,221,0,.35), rgba(255,221,0,0) 62%); pointer-events:none; }
+.page-hero::after{ content:""; position:absolute; right:-180px; bottom:-220px; width:520px; height:520px; border-radius:50%;
+  background:radial-gradient(circle at 30% 30%, rgba(255,221,0,.22), rgba(255,221,0,0) 66%); pointer-events:none; z-index:0; }
+.page-hero > .container{ position:relative; z-index:1; }
 .page-hero .heading1,.page-hero__title{ color:var(--addu-white); font-size:clamp(30px,4.2vw,62px); }
 .page-hero__lead p{ color:rgba(255,255,255,.78); font-size:17px; max-width:820px; }
 .page-hero .breadcrumbs, .page-hero .breadcrumbs a, .page-hero .breadcrumbs span{ color:rgba(255,255,255,.55); }
