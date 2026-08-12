@@ -150,7 +150,6 @@
       </div>
       <button class="quiz-back" id="quizBack" style="display:none">← Назад</button>
     </div>
-    </div>
 
     <!-- БЛОК 7 (сквозной): этапы -->
     <h2 class="heading2 step-up" id="steps">Как мы работаем: этапы продвижения</h2>
@@ -263,8 +262,6 @@
   });
   back.addEventListener('click', function(){ show(Math.max(cur - 1, 0)); });
 })();
-
-});
 document.querySelectorAll('.faq-question').forEach(function(q){
   q.addEventListener('click', function(){ q.parentElement.classList.toggle('open'); });
 });
