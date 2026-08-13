@@ -10,11 +10,15 @@
             ' .faq-item, .table-wrap, .skel-block, .callout-proto, .new-block, .case-card-f,' +
             ' .quiz, .hero-badge, .team-card, .ph, .ph-photo, .ph-video';
 
+  // блоки прототипа + те, что уже помечены .rv в разметке (страницы кейсов, хаб)
   var nodes = [].slice.call(document.querySelectorAll(SEL));
   nodes.forEach(function (el, i) {
     el.classList.add('rv');
     var d = i % 4;                       // лёгкая лесенка внутри ряда
-    if (d) el.setAttribute('data-d', d);
+    if (d && !el.hasAttribute('data-d')) el.setAttribute('data-d', d);
+  });
+  [].forEach.call(document.querySelectorAll('.rv'), function (el) {
+    if (nodes.indexOf(el) < 0) nodes.push(el);
   });
 
   if (reduce || !('IntersectionObserver' in window)) {
@@ -26,6 +30,12 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
     requestAnimationFrame(function () { nodes.forEach(function (el) { io.observe(el); }); });
+    setTimeout(function () {                       // страховка от пустой страницы
+      nodes.forEach(function (el) {
+        if (!el.classList.contains('in') && el.getBoundingClientRect().top < innerHeight * 1.5)
+          el.classList.add('in');
+      });
+    }, 2500);
   }
 
   /* 2. счётчики в блоке цифр */

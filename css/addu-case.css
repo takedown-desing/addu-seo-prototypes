@@ -159,3 +159,8 @@ body.case-page .hdr.hdr--stuck .hdr__logo,body.case-page .hdr.hdr--stuck .hdr__n
 .prj__c.case-card-f:hover{ transform:none; box-shadow:none; }
 .prj__c.case-card-f .prj__ph{ transition:box-shadow .3s; }
 .prj__c.case-card-f:hover .prj__ph{ box-shadow:0 24px 50px rgba(0,0,0,.12); }
+/* длинные скриншоты страниц — показываем верх, прокрутка внутри рамки при наведении */
+.cs-dev img{ max-height:clamp(260px,32vw,560px); object-fit:cover; object-position:top;
+  transition:object-position 3.5s linear; }
+.cs-dev:hover img{ object-position:bottom; }
+.cs-dev figcaption{ display:none; }
