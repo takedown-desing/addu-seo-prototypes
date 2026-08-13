@@ -315,3 +315,18 @@ p{ margin:0 }
   .stack__pills{ justify-content:flex-start }
   .ftr__phone{ font-size:13vw }
 }
+
+/* ---------- hero объединённой главной (SEO-лид, бейджи, кнопки) ---------- */
+.hero__t{ margin-bottom:clamp(20px,2.2vw,42px) }
+.hero__sub{ margin:0; max-width:66ch; color:rgba(255,255,255,.74);
+  font-size:clamp(13px,.9vw,17px); line-height:1.6 }
+.hero__act{ display:flex; gap:12px; flex-wrap:wrap; margin-top:clamp(20px,2.2vw,42px) }
+.btn2--gh{ border-color:rgba(255,255,255,.42); color:#fff }
+.btn2--gh:hover{ background:#fff; color:#000; border-color:#fff }
+.hero__stats{ display:flex; gap:clamp(20px,3.4vw,64px); flex-wrap:wrap;
+  margin-top:clamp(24px,2.6vw,50px); padding-top:clamp(18px,2vw,38px);
+  border-top:1px solid rgba(255,255,255,.14) }
+.hero__stat b{ display:block; font-size:clamp(24px,2.4vw,46px); line-height:1; color:var(--acc);
+  font-weight:800; letter-spacing:-.04em }
+.hero__stat span{ display:block; margin-top:8px; font-size:clamp(11px,.68vw,13px);
+  color:rgba(255,255,255,.6) }

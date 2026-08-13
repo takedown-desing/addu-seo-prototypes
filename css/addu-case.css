@@ -1,0 +1,161 @@
+/* ==========================================================================
+   ADDU CASE — страница проекта по макету «Страница проекта».
+   Подключается после addu-home.css и addu-skin.css.
+   ========================================================================== */
+
+/* ---------- шапка проекта: светлая ---------- */
+.cs-top{ background:var(--soft); padding:clamp(96px,9.4vw,180px) 0 clamp(30px,3.2vw,62px); }
+.cs-top .label{ font-size:clamp(12px,.9vw,16px); font-weight:700; }
+.cs-top h1{ font-size:clamp(26px,3.5vw,66px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.04; margin:clamp(14px,1.5vw,28px) 0 0; max-width:22ch; }
+/* шапка сайта на светлом фоне страницы проекта */
+body.case-page .hdr{ color:var(--dark); }
+body.case-page .hdr__logo,body.case-page .hdr__phone,body.case-page .hdr__nav > a{ color:var(--dark); }
+body.case-page .hdr__soc a{ border-color:rgba(0,0,0,.25); color:var(--dark); }
+body.case-page .hdr__soc a:hover{ background:var(--dark); color:#fff; border-color:var(--dark); }
+body.case-page .hdr__burger{ background:var(--dark); }
+body.case-page .hdr.hdr--stuck{ background:rgba(255,255,255,.92); }
+body.case-page .hdr.hdr--stuck .hdr__logo,body.case-page .hdr.hdr--stuck .hdr__nav > a{ color:var(--dark); }
+
+/* ---------- мета-строка: сайт · описание · год ---------- */
+.cs-meta{ display:grid; grid-template-columns:minmax(180px,1fr) 2.2fr minmax(90px,.5fr);
+  gap:clamp(18px,2vw,40px); align-items:start; padding:clamp(28px,3vw,58px) 0; }
+.cs-site{ display:inline-flex; align-items:center; gap:9px; background:var(--dark); color:#fff;
+  border-radius:999px; padding:clamp(9px,.75vw,14px) clamp(16px,1.3vw,24px); font-weight:700;
+  font-size:clamp(11.5px,.72vw,14px); text-decoration:none; transition:.22s; }
+.cs-site:hover{ background:var(--acc); color:#000; }
+.cs-site i{ width:16px; height:16px; border-radius:50%; background:var(--acc); display:inline-block;
+  flex:0 0 auto; }
+.cs-site:hover i{ background:var(--dark); }
+.cs-meta__d{ font-size:clamp(12px,.78vw,15px); line-height:1.55; color:#4b4f55; max-width:62ch; }
+.cs-meta__y{ text-align:right; font-size:clamp(12px,.78vw,15px); font-weight:700; color:#8d9096; }
+
+/* ---------- обложка во всю ширину ---------- */
+.cs-cover{ display:block; width:100%; height:clamp(220px,34vw,660px); object-fit:cover; }
+.cs-cover--ph{ display:flex; align-items:center; justify-content:center; background:var(--soft);
+  border:1.6px dashed #d6d2c8; color:#9a9a9a; font-size:clamp(12px,.78vw,15px); text-align:center; }
+
+/* ---------- двухколоночный блок: подпись слева, содержание справа ---------- */
+.cs-sec{ padding:clamp(40px,4.6vw,90px) 0; }
+.cs-sec--soft{ background:var(--soft); }
+.cs-sec--tight{ padding-top:0; }
+.cs-row{ display:grid; grid-template-columns:minmax(160px,1fr) 3fr; gap:clamp(18px,2.4vw,46px);
+  align-items:start; }
+.cs-row > .label{ font-size:clamp(12px,.83vw,15px); font-weight:700; }
+.cs-row p{ font-size:clamp(13px,.88vw,17px); line-height:1.6; color:#3f434a; max-width:72ch; margin:0; }
+
+/* ---------- крупное утверждение (цель / итоги) ---------- */
+.cs-state{ font-size:clamp(21px,2.5vw,47px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.12; max-width:26ch; margin:0; }
+.cs-state--full{ max-width:34ch; }
+
+/* ---------- нумерованный список задач / решения ---------- */
+.cs-list{ display:grid; gap:clamp(16px,1.8vw,34px); }
+.cs-item{ display:grid; grid-template-columns:clamp(34px,3.2vw,62px) 1fr; gap:clamp(12px,1.4vw,26px);
+  align-items:start; }
+.cs-item__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a; padding-top:.35em; }
+.cs-item__t{ font-size:clamp(15px,1.25vw,24px); font-weight:800; letter-spacing:-.03em;
+  line-height:1.25; max-width:34ch; }
+
+/* ---------- «Решение» на тёмной фотографии ---------- */
+.cs-dark{ position:relative; color:#fff; padding:clamp(44px,5vw,96px) 0;
+  background:#1a1712 center/cover no-repeat; }
+.cs-dark::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.42); }
+.cs-dark .wrap{ position:relative; z-index:2; }
+.cs-dark .label{ color:#fff; }
+.cs-dark .cs-item__n{ color:rgba(255,255,255,.6); }
+.cs-dark .cs-item__t{ color:#fff; }
+
+/* ---------- макеты устройств ---------- */
+.cs-dev{ background:#111; border-radius:clamp(16px,1.6vw,30px); padding:clamp(8px,.9vw,17px);
+  box-shadow:0 30px 70px rgba(0,0,0,.18); overflow:hidden; }
+.cs-dev img{ display:block; width:100%; border-radius:clamp(9px,.9vw,17px); }
+.cs-dev--bare{ background:none; padding:0; box-shadow:none; }
+.cs-dev--bare img{ border-radius:0; }
+.cs-dev--ph span{ display:block; margin-top:8px; }
+.cs-dev--ph{ display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:clamp(180px,22vw,420px);
+  background:#f1efe9; border:1.6px dashed #d6d2c8; color:#9a9a9a; text-align:center;
+  font-size:clamp(11.5px,.72vw,14px); padding:clamp(20px,2vw,38px); box-shadow:none; }
+.cs-devs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(14px,1.5vw,28px); margin-top:clamp(20px,2.2vw,42px); }
+
+/* ---------- особенности: маркированный список ---------- */
+.cs-bul{ list-style:none; margin:0; padding:0; columns:2; column-gap:clamp(20px,2.4vw,46px); }
+.cs-bul li{ position:relative; padding-left:24px; margin:0 0 clamp(9px,.9vw,16px);
+  font-size:clamp(12.5px,.83vw,15.5px); line-height:1.5; color:#3f434a; break-inside:avoid; }
+.cs-bul li::before{ content:""; position:absolute; left:0; top:.55em; width:9px; height:9px;
+  border-radius:50%; border:2.5px solid var(--acc); }
+
+/* ---------- итоги в цифрах ---------- */
+.cs-nums{ background:var(--dark); color:#fff; padding:clamp(44px,5vw,96px) 0; }
+.cs-nums .label{ color:#fff; }
+.cs-nums__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1.15vw,22px);
+  margin-top:clamp(22px,2.4vw,46px); }
+.cs-num{ border:1px solid rgba(255,255,255,.14); border-radius:var(--r);
+  padding:clamp(26px,3vw,58px) clamp(18px,1.8vw,34px); text-align:center; transition:.3s; }
+.cs-num:hover{ border-color:rgba(255,221,0,.45); background:rgba(255,255,255,.03); }
+.cs-num b{ display:block; font-size:clamp(40px,5vw,96px); line-height:1; color:var(--acc);
+  font-weight:800; letter-spacing:-.05em; }
+.cs-num--out b{ color:transparent; -webkit-text-stroke:2px var(--acc); }
+.cs-num span{ display:block; margin-top:clamp(16px,1.8vw,34px); font-size:clamp(11.5px,.78vw,15px);
+  font-weight:700; line-height:1.35; }
+
+/* ---------- жёлтый блок «Обсудим ваш проект?» ---------- */
+.cs-cta{ background:var(--acc); padding:clamp(44px,5vw,96px) 0 clamp(30px,3.4vw,64px); position:relative; overflow:hidden; }
+.cs-cta h2{ font-size:clamp(28px,4vw,76px); font-weight:800; letter-spacing:-.04em; color:var(--dark); }
+.cs-cta__grid{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(24px,3vw,58px);
+  margin-top:clamp(24px,2.6vw,50px); align-items:start; }
+.cs-cta__lead{ font-size:clamp(14px,1.15vw,22px); font-weight:800; line-height:1.35;
+  letter-spacing:-.025em; max-width:30ch; }
+.cs-cta__plane{ display:block; width:min(100%,340px); margin-top:clamp(20px,2.4vw,46px);
+; }
+.cs-form label{ display:block; margin-bottom:clamp(16px,1.8vw,34px); }
+.cs-form span{ display:block; font-size:clamp(10.5px,.63vw,12.5px); color:rgba(0,0,0,.55); margin-bottom:6px; }
+.cs-form input{ width:100%; background:none; border:0; border-bottom:1.5px solid rgba(0,0,0,.35);
+  padding:8px 0; font-family:inherit; font-size:clamp(13px,.83vw,16px); color:var(--dark); outline:none; }
+.cs-form input:focus{ border-bottom-color:var(--dark); }
+.cs-form .btn{ margin-top:6px; }
+.cs-note{ font-size:clamp(10.5px,.63vw,12.5px); color:rgba(0,0,0,.6); margin-top:14px; max-width:46ch; }
+.cs-contacts{ display:grid; grid-template-columns:1fr 1fr; gap:clamp(20px,2.4vw,46px);
+  margin-top:clamp(30px,3.4vw,64px); }
+.cs-contacts b{ display:block; font-size:clamp(20px,2vw,38px); font-weight:800; letter-spacing:-.03em; }
+.cs-contacts span{ display:block; font-size:clamp(10.5px,.63vw,12.5px); color:rgba(0,0,0,.6); margin-bottom:8px; }
+.cs-msg{ display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+.cs-msg a{ display:inline-flex; align-items:center; gap:8px; font-weight:800;
+  font-size:clamp(14px,1.15vw,22px); color:var(--dark); text-decoration:none; }
+.cs-msg i{ width:clamp(22px,1.8vw,34px); height:clamp(22px,1.8vw,34px); border-radius:50%;
+  background:var(--dark); color:var(--acc); display:flex; align-items:center; justify-content:center;
+  font-size:12px; font-style:normal; }
+
+/* ---------- ещё проекты ---------- */
+.cs-more{ background:var(--soft); padding:clamp(44px,5vw,96px) 0; }
+
+@media (max-width:1080px){
+  .cs-meta{ grid-template-columns:1fr; }
+  .cs-meta__y{ text-align:left; }
+  .cs-row{ grid-template-columns:1fr; }
+  .cs-nums__grid{ grid-template-columns:1fr; }
+  .cs-cta__grid,.cs-contacts{ grid-template-columns:1fr; }
+  .cs-bul{ columns:1; }
+}
+
+/* ---------- карточка проекта в хабе ---------- */
+.prj__ph-ph{ display:flex; flex-direction:column; align-items:center; justify-content:center;
+  height:100%; background:#e6e2da; color:#8d9096; text-align:center;
+  font-size:clamp(11.5px,.72vw,14px); padding:20px; }
+.prj__ph-ph span{ display:block; margin-top:8px; font-size:11px; opacity:.75; }
+.prj__own{ margin-top:clamp(12px,1.2vw,22px); font-size:clamp(10.5px,.63vw,12px); font-weight:700;
+  text-transform:uppercase; letter-spacing:.06em; color:#9a9a9a; }
+.prj__c .prj__t{ margin-top:clamp(6px,.6vw,12px); }
+.prj__c .metric-case__grid{ display:grid; grid-template-columns:repeat(2,1fr);
+  gap:clamp(10px,1vw,18px); margin:clamp(12px,1.2vw,22px) 0 0; }
+.prj__tag--acc{ background:var(--acc) !important; color:#000 !important; font-weight:700; }
+.prj__tags span{ background:#eceae4; color:#5c6067; border-radius:999px; padding:5px 12px;
+  font-size:clamp(10px,.6vw,11.5px); }
+.case-card-f{ transition:transform .3s, box-shadow .3s; }
+/* карточка проекта в хабе — как в макете: без контейнера, только фото и текст */
+.prj__c.case-card-f{ background:none !important; padding:0 !important; border-radius:0 !important;
+  box-shadow:none !important; }
+.prj__c.case-card-f:hover{ transform:none; box-shadow:none; }
+.prj__c.case-card-f .prj__ph{ transition:box-shadow .3s; }
+.prj__c.case-card-f:hover .prj__ph{ box-shadow:0 24px 50px rgba(0,0,0,.12); }

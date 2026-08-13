@@ -438,3 +438,16 @@ h1,h2,h3,h4,.heading1,.heading2,.page-hero__title,.btn,.btn2{
 .page-content a:not(.btn):not(.btn2):hover{ background:var(--acc); }
 .page-list li a{ font-weight:600; }
 .ai-ask a{ border-bottom:0; }
+
+/* ---------- варианты кнопок макета (перекрывают базовый .btn2) ---------- */
+.btn2--ghost{ background:transparent; color:var(--dark); border-color:rgba(0,0,0,.28) }
+.btn2--ghost:hover{ background:var(--dark); color:#fff; border-color:var(--dark) }
+.btn2--ghostw{ background:transparent; color:rgba(255,255,255,.85); border-color:rgba(255,255,255,.3) }
+.btn2--ghostw:hover{ color:#fff; border-color:#fff }
+.btn2--gh{ background:transparent; color:#fff; border-color:rgba(255,255,255,.42) }
+.btn2--gh:hover{ background:#fff; color:#000; border-color:#fff }
+.btn2--acc{ background:var(--acc); color:#000; border-color:var(--acc) }
+.btn2--dark{ background:var(--dark); color:#fff; border-color:var(--dark) }
+/* карточки-кейсы на светло-бежевой секции — белые, чтобы не сливались */
+.softsec .metric-case,.prjsec .metric-case,.softsec .work-card,.prjsec .work-card,
+.softsec .faq-item,.prjsec .faq-item,.softsec .steps,.prjsec .steps{ background:var(--white) }
