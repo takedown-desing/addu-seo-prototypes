@@ -494,3 +494,12 @@ h1,h2,h3,h4,.heading1,.heading2,.page-hero__title,.btn,.btn2{
 .mega{ z-index:130 }
 /* на узких экранах меню прячется в бургер — мега-панель не нужна */
 @media (max-width:1180px){ .hdr__item .mega{ display:none !important } }
+
+/* ---------- кейсы со скриншотами (решение созвона 3) ---------- */
+.metric-case__ph{ border-radius:var(--r); overflow:hidden; background:#e6e2da; aspect-ratio:16/10;
+  margin:-4px 0 clamp(14px,1.4vw,24px); }
+.metric-case__ph img{ width:100%; height:100%; object-fit:cover; object-position:top; display:block;
+  transition:transform .6s cubic-bezier(.2,.7,.3,1); }
+.metric-case:hover .metric-case__ph img{ transform:scale(1.04); }
+.metric-case--stub{ border:1.6px dashed var(--line); background:transparent; }
+.metric-case--stub .metric-case__title{ color:#8d9096; }
