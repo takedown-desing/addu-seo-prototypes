@@ -451,3 +451,22 @@ h1,h2,h3,h4,.heading1,.heading2,.page-hero__title,.btn,.btn2{
 /* карточки-кейсы на светло-бежевой секции — белые, чтобы не сливались */
 .softsec .metric-case,.prjsec .metric-case,.softsec .work-card,.prjsec .work-card,
 .softsec .faq-item,.prjsec .faq-item,.softsec .steps,.prjsec .steps{ background:var(--white) }
+
+/* ---------- читаемая ширина текста ----------
+   Сетки, таблицы и карточки — во всю ширину контейнера, сплошной текст — не длиннее ~84 знаков в строке. */
+.page-content p,
+.page-content ul,
+.page-content ol,
+.page-content .definition,
+.page-content .callout-proto,
+.page-content .legend-box,
+.page-content .small-note,
+.cs-row p,
+.page-content .faq-answer p{ max-width:84ch; }
+.page-content .why{ max-width:96ch; }
+.page-content .heading2{ max-width:26ch; }
+.page-content h3,.page-content .page-h3{ max-width:36ch; }
+/* внутри карточек, таблиц и плиток ограничение снимаем — там своя ширина */
+.work-card p,.work-card ul,.metric-case p,.metric-case ul,.tariff p,.tariff ul,
+.pain,.step__body p,.page-table p,.page-table ul,.plan__d,
+.ai-ask p,.quiz p,.expert p,.team-card p,.cs-dev--ph,.prj__d{ max-width:none; }
