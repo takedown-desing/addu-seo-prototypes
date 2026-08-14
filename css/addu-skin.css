@@ -495,6 +495,35 @@ h1,h2,h3,h4,.heading1,.heading2,.page-hero__title,.btn,.btn2{
 /* на узких экранах меню прячется в бургер — мега-панель не нужна */
 @media (max-width:1180px){ .hdr__item .mega{ display:none !important } }
 
+/* ---------- панель бургера: навигация на любых ширинах ---------- */
+.hdr__burger{ position:relative; z-index:140 }
+.hdr__panel{ position:absolute; left:0; right:0; top:100%; z-index:135; display:none;
+  background:var(--white); color:var(--dark); border-radius:0 0 var(--rl) var(--rl);
+  box-shadow:0 30px 70px rgba(0,0,0,.22); padding:clamp(20px,2.2vw,42px) clamp(18px,10.4vw,200px);
+  max-height:calc(100vh - 90px); overflow:auto; }
+body.menu-open .hdr__panel{ display:block }
+body.menu-open{ overflow:hidden }
+.hdr__panel-cols{ display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+  gap:clamp(14px,1.4vw,28px) }
+.hdr__panel .mega-h{ font-size:14px; margin-bottom:10px; display:block; color:var(--dark) }
+.hdr__panel ul{ list-style:none; margin:0; padding:0 }
+.hdr__panel li{ margin:7px 0 }
+.hdr__panel a{ color:#5c6067; text-decoration:none; font-size:13.5px }
+.hdr__panel a:hover{ color:var(--dark) }
+.hdr__panel-main{ display:flex; flex-wrap:wrap; gap:10px 22px; margin-bottom:clamp(16px,1.8vw,32px);
+  padding-bottom:clamp(14px,1.4vw,26px); border-bottom:1px solid var(--line) }
+.hdr__panel-main a{ font-size:15px; font-weight:700; color:var(--dark) }
+.hdr__panel-foot{ display:flex; gap:14px; align-items:center; flex-wrap:wrap;
+  margin-top:clamp(16px,1.8vw,32px); padding-top:clamp(14px,1.4vw,26px); border-top:1px solid var(--line) }
+.hdr__panel-foot a.phone{ font-size:18px; font-weight:800; color:var(--dark) }
+/* крестик вместо полосок, когда панель открыта */
+body.menu-open .hdr__burger i:first-child{ transform:translateY(3.5px) rotate(45deg) }
+body.menu-open .hdr__burger i:last-child{ transform:translateY(-3.5px) rotate(-45deg) }
+.hdr__burger i{ transition:transform .2s }
+/* меню прячем позже: на 1180 оно ещё помещается, если ужать */
+@media (max-width:1400px){ .hdr__nav{ gap:clamp(8px,.9vw,16px); font-size:13px } .hdr__soc{ display:none } }
+@media (max-width:1180px){ .hdr__nav{ display:none } }
+
 /* ---------- кейсы со скриншотами (решение созвона 3) ---------- */
 .metric-case__ph{ border-radius:var(--r); overflow:hidden; background:#e6e2da; aspect-ratio:16/10;
   margin:-4px 0 clamp(14px,1.4vw,24px); }

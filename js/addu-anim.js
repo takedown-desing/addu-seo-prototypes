@@ -89,6 +89,33 @@
       document.querySelectorAll('.hdr__item.is-open').forEach(function (x) { x.classList.remove('is-open'); });
   });
 
+  /* 3.6 бургер: панель со всеми разделами — работает на любой ширине */
+  (function () {
+    var burger = document.querySelector('.hdr__burger');
+    var hdr = document.querySelector('.hdr');
+    if (!burger || !hdr) return;
+    var panel = document.createElement('div');
+    panel.className = 'hdr__panel';
+    var mega = document.querySelector('.mega');
+    var main = [].slice.call(document.querySelectorAll('.hdr__nav > a, .hdr__item > a'))
+      .map(function (a) { return '<a href="' + a.getAttribute('href') + '">' + a.textContent.trim() + '</a>'; })
+      .join('');
+    panel.innerHTML =
+      '<div class="hdr__panel-main">' + main + '</div>' +
+      '<div class="hdr__panel-cols">' + (mega ? mega.innerHTML : '') + '</div>' +
+      '<div class="hdr__panel-foot"><a class="phone" href="tel:+74951503200">+7 495 150-32-00</a>' +
+      '<a class="btn btn--primary" href="/addu-seo-prototypes/kontakty/">Стать клиентом</a></div>';
+    hdr.appendChild(panel);
+    function toggle(on) {
+      document.body.classList.toggle('menu-open', on === undefined ? !document.body.classList.contains('menu-open') : on);
+    }
+    burger.addEventListener('click', function (e) { e.stopPropagation(); toggle(); });
+    document.addEventListener('click', function (e) {
+      if (document.body.classList.contains('menu-open') && !e.target.closest('.hdr__panel')) toggle(false);
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
+  })();
+
   /* 4. шапка появляется при прокрутке вверх */
   var hdr = document.querySelector('.hdr'), last = 0;
   if (hdr) window.addEventListener('scroll', function () {
