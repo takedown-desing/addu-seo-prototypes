@@ -470,3 +470,19 @@ h1,h2,h3,h4,.heading1,.heading2,.page-hero__title,.btn,.btn2{
 .work-card p,.work-card ul,.metric-case p,.metric-case ul,.tariff p,.tariff ul,
 .pain,.step__body p,.page-table p,.page-table ul,.plan__d,
 .ai-ask p,.quiz p,.expert p,.team-card p,.cs-dev--ph,.prj__d{ max-width:none; }
+
+/* ---------- единая сетка блоков ----------
+   Раньше «новый блок» имел свою рамку и отступы и вылезал из общей колонки —
+   теперь все блоки страницы начинаются на одной вертикали. */
+.page-content .new-block{
+  border-left:0 !important; background:none !important; border-radius:0 !important;
+  padding:0 !important; margin:clamp(30px,3vw,58px) 0 !important;
+  border-top:1px solid var(--line);
+  padding-top:clamp(22px,2.2vw,42px) !important;
+}
+.page-content .new-block > .heading2{ margin-top:0 !important; }
+.page-content .new-block .why{
+  background:#fffbe6; border-radius:12px; padding:10px 14px; display:inline-block;
+  font-size:clamp(11px,.68vw,13px); color:#7a6a10;
+}
+.page-content .legend-box,.page-content .callout-proto{ max-width:none; }

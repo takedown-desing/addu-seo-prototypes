@@ -226,3 +226,8 @@ body.inner-page .container.svc-hero__in{
 @media (max-width:1080px){
   body.inner-page .container.svc-hero__in{ padding-top:clamp(92px,15vw,130px) }
 }
+/* плейсхолдер карты: подпись в две строки, а не в одну */
+.svc-case__ph{ flex-direction:column; gap:6px; line-height:1.4 }
+.svc-case__ph span{ display:block }
+/* маркеры списка внутри жёлтой карточки видны */
+.svc-case:nth-child(even) .page-list li::before{ background:var(--dark) }
