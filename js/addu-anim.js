@@ -71,6 +71,24 @@
     if (!was) item.classList.add('open');
   });
 
+  /* 3.5 мега-меню: наведение работает через CSS, здесь — тап на телефоне и клавиатура */
+  document.querySelectorAll('.hdr__item').forEach(function (item) {
+    var link = item.querySelector('a');
+    if (!link) return;
+    link.addEventListener('click', function (e) {
+      if (window.matchMedia('(hover: hover)').matches) return;   // на десктопе — обычный переход
+      if (!item.classList.contains('is-open')) { e.preventDefault(); }
+      document.querySelectorAll('.hdr__item').forEach(function (x) {
+        if (x !== item) x.classList.remove('is-open');
+      });
+      item.classList.toggle('is-open');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.hdr__item'))
+      document.querySelectorAll('.hdr__item.is-open').forEach(function (x) { x.classList.remove('is-open'); });
+  });
+
   /* 4. шапка появляется при прокрутке вверх */
   var hdr = document.querySelector('.hdr'), last = 0;
   if (hdr) window.addEventListener('scroll', function () {
