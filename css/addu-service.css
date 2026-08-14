@@ -1,0 +1,228 @@
+/* ==========================================================================
+   ADDU SERVICE — дизайн страниц услуг по макетам «Поддержка», «Продвижение
+   сайта», «Разработка для бизнеса». Десктоп + мобильная версия.
+   Подключается после addu-skin.css.
+   ========================================================================== */
+
+/* ---------- светлый первый экран услуги ---------- */
+body.inner-page .page-hero.svc-hero{
+  background:var(--soft) !important; color:var(--dark); padding:0 !important;
+}
+body.inner-page .page-hero.svc-hero::before,
+body.inner-page .page-hero.svc-hero::after{ content:none !important; }
+.svc-hero__in{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(20px,3vw,60px); align-items:center;
+  padding:clamp(96px,9vw,170px) 0 clamp(40px,4.4vw,84px); }
+.svc-hero .breadcrumbs{ margin-bottom:clamp(14px,1.4vw,26px); }
+.svc-hero .breadcrumbs a,.svc-hero .breadcrumbs span{ color:#8d9096 !important; }
+.svc-hero .breadcrumbs a:hover{ color:var(--dark) !important; }
+.svc-hero__label{ font-size:clamp(12px,.83vw,15px); font-weight:700; color:var(--dark);
+  margin-bottom:clamp(12px,1.2vw,22px); }
+.svc-hero h1,.svc-hero .heading1{ color:var(--dark) !important; text-transform:none !important;
+  font-size:clamp(28px,3.5vw,64px) !important; line-height:1.06; letter-spacing:-.035em;
+  max-width:18ch; margin:0; }
+.svc-hero__feats{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(12px,1.4vw,26px); margin-top:clamp(22px,2.4vw,46px); max-width:760px; }
+.svc-feat{ display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start; }
+.svc-feat i{ width:clamp(30px,2.6vw,44px); height:clamp(30px,2.6vw,44px); border-radius:50%;
+  background:var(--dark); color:var(--acc); display:flex; align-items:center; justify-content:center;
+  font-size:clamp(13px,1vw,17px); font-style:normal; flex:0 0 auto; }
+.svc-feat span{ font-size:clamp(11.5px,.73vw,14px); line-height:1.4; color:#3f434a; }
+.svc-hero__act{ display:flex; gap:12px; flex-wrap:wrap; margin-top:clamp(24px,2.6vw,50px); }
+.svc-hero__art{ display:flex; justify-content:center; }
+.svc-hero__art img{ width:min(100%,clamp(220px,26vw,470px)); height:auto;
+  animation:svcfloat 6s ease-in-out infinite; }
+@keyframes svcfloat{ 0%,100%{ transform:translateY(0) rotate(0) } 50%{ transform:translateY(-14px) rotate(-2deg) } }
+@media (prefers-reduced-motion:reduce){ .svc-hero__art img{ animation:none } }
+
+/* ---------- тёмная секция услуги ---------- */
+.svc-dark{ background:var(--dark); color:#fff; padding:clamp(48px,5.6vw,110px) 0; }
+.svc-dark .label{ color:#fff; font-size:clamp(12px,.83vw,15px); font-weight:700; }
+.svc-dark__row{ display:grid; grid-template-columns:minmax(160px,1fr) 2.6fr;
+  gap:clamp(18px,2.4vw,48px); align-items:start; margin-bottom:clamp(28px,3vw,58px); }
+.svc-dark__row p{ font-size:clamp(13px,.88vw,17px); line-height:1.6; color:rgba(255,255,255,.78);
+  max-width:78ch; margin:0; }
+.svc-claim{ font-size:clamp(21px,2.5vw,46px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.14; color:#fff; max-width:30ch; margin:clamp(28px,3vw,58px) 0; }
+.svc-h2{ font-size:clamp(24px,2.9vw,54px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.06; margin:0 0 clamp(24px,2.6vw,50px); }
+
+/* карточки-стопка внутри тёмной секции */
+.svc-stack{ display:block; }
+.svc-stack__c{ position:sticky; background:var(--white); border-radius:var(--rl);
+  padding:clamp(24px,2.6vw,52px); margin-bottom:clamp(14px,1.5vw,28px); }
+.svc-stack__c:nth-child(1){ top:clamp(70px,7vw,130px) }
+.svc-stack__c:nth-child(2){ top:clamp(82px,8vw,152px); background:var(--soft) }
+.svc-stack__c:nth-child(3){ top:clamp(94px,9vw,174px) }
+.svc-stack__c:nth-child(4){ top:clamp(106px,10vw,196px); background:var(--acc) }
+.svc-stack__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a; }
+.svc-stack__c:nth-child(4) .svc-stack__n{ color:rgba(0,0,0,.5) }
+.svc-stack__t{ font-size:clamp(20px,2.2vw,40px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.1; margin:clamp(10px,1vw,18px) 0; max-width:22ch; color:var(--dark); }
+.svc-stack__lab{ font-size:clamp(11px,.68vw,13px); font-weight:700; color:#6b6f76;
+  margin-bottom:clamp(10px,1vw,18px); }
+.svc-stack__c p{ font-size:clamp(12.5px,.83vw,15.5px); line-height:1.6; color:#3f434a; max-width:84ch; margin:0; }
+
+/* ---------- 4 карточки с иконками (тёмная секция) ---------- */
+.svc-cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.15vw,22px);
+  margin-top:clamp(24px,2.6vw,50px); }
+.svc-card{ background:var(--white); border-radius:var(--rl); padding:clamp(18px,1.8vw,34px);
+  display:flex; flex-direction:column; min-height:clamp(220px,17vw,320px); }
+.svc-card--acc{ background:var(--acc); }
+.svc-card__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a; }
+.svc-card--acc .svc-card__n{ color:rgba(0,0,0,.5) }
+.svc-card__t{ font-size:clamp(16px,1.15vw,22px); font-weight:800; letter-spacing:-.03em;
+  line-height:1.15; margin:10px 0 12px; color:var(--dark); }
+.svc-card p{ font-size:clamp(11.5px,.73vw,14px); line-height:1.55; color:#5c6067; margin:0; }
+.svc-card__ico{ margin-top:auto; align-self:flex-end; width:clamp(52px,4.4vw,84px); height:auto; opacity:.9; }
+
+/* ---------- тарифы услуги ---------- */
+.svc-prices{ padding:clamp(48px,5.6vw,110px) 0; background:var(--soft); }
+.svc-prices__head{ display:grid; grid-template-columns:minmax(160px,1fr) 2fr;
+  gap:clamp(18px,2.4vw,48px); margin-bottom:clamp(24px,2.6vw,50px); }
+.svc-prices__head p{ font-size:clamp(12px,.78vw,15px); color:#4b4f55; max-width:60ch; margin:0; }
+.svc-tars{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(12px,1.05vw,20px); }
+.svc-tar{ background:var(--white); border-radius:var(--rl); padding:clamp(18px,1.8vw,34px);
+  display:flex; flex-direction:column; }
+.svc-tar--hit{ background:var(--acc); }
+.svc-tar__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a; }
+.svc-tar--hit .svc-tar__n{ color:rgba(0,0,0,.5) }
+.svc-tar__t{ font-size:clamp(19px,1.5vw,29px); font-weight:800; letter-spacing:-.03em; margin:10px 0 14px; }
+.svc-tar__d{ font-size:clamp(11px,.68vw,13px); line-height:1.5; color:#5c6067; flex:1; }
+.svc-tar--hit .svc-tar__d{ color:rgba(0,0,0,.72) }
+.svc-tar__p{ font-size:clamp(22px,1.9vw,36px); font-weight:800; letter-spacing:-.04em;
+  margin:clamp(16px,1.6vw,30px) 0 4px; }
+.svc-tar__h{ font-size:clamp(11.5px,.7vw,13.5px); color:#5c6067; }
+.svc-tar--hit .svc-tar__h{ color:rgba(0,0,0,.65) }
+.svc-tar__inc{ display:flex; align-items:center; justify-content:space-between; gap:10px;
+  margin:clamp(14px,1.4vw,26px) 0; font-size:clamp(10.5px,.63vw,12px); color:#5c6067; }
+.svc-tar__inc b{ background:var(--white); border-radius:999px; padding:7px 14px;
+  font-size:clamp(10.5px,.63vw,12px); color:var(--dark); font-weight:700; }
+.svc-tar ul{ list-style:none; margin:0 0 clamp(16px,1.6vw,30px); padding:0; }
+.svc-tar li{ position:relative; padding-left:16px; margin:7px 0;
+  font-size:clamp(11px,.68vw,13px); color:#5c6067; }
+.svc-tar li::before{ content:"•"; position:absolute; left:0; }
+.svc-tar--hit li{ color:rgba(0,0,0,.78) }
+.svc-tar .btn{ margin-top:auto; }
+.svc-note{ display:flex; align-items:center; gap:clamp(16px,1.8vw,34px); flex-wrap:wrap;
+  background:var(--white); border-radius:var(--rl); padding:clamp(20px,2vw,38px);
+  margin-top:clamp(16px,1.6vw,30px); }
+.svc-note b{ font-size:clamp(15px,1.35vw,26px); font-weight:800; letter-spacing:-.03em; }
+.svc-note p{ font-size:clamp(11.5px,.7vw,13.5px); color:#5c6067; margin:0; max-width:52ch; }
+.svc-note__ico{ width:clamp(44px,3.6vw,68px); height:auto; }
+
+/* ---------- жёлтые пилюли специальностей ---------- */
+.svc-pills{ display:flex; flex-wrap:wrap; gap:clamp(8px,.7vw,13px); }
+.svc-pills span{ background:var(--acc); color:#000; font-weight:700;
+  font-size:clamp(11px,.73vw,14px); border-radius:999px; padding:clamp(8px,.62vw,12px) clamp(14px,1.15vw,22px); }
+.svc-rate{ background:var(--soft); border-radius:var(--rl); padding:clamp(20px,2vw,38px);
+  max-width:360px; }
+.svc-rate__lab{ font-size:clamp(10.5px,.63vw,12.5px); color:#6b6f76; }
+.svc-rate__v{ font-size:clamp(24px,2.1vw,40px); font-weight:800; letter-spacing:-.04em; margin:10px 0 4px; }
+.svc-rate__s{ font-size:clamp(12px,.78vw,15px); color:#5c6067; }
+
+/* ---------- фото-полоса с оффером ---------- */
+.svc-offer{ position:relative; color:#fff; padding:clamp(44px,5vw,96px) 0;
+  background:#1a1712 center/cover no-repeat; overflow:hidden; }
+.svc-offer::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.45) }
+.svc-offer .container{ position:relative; z-index:2 }
+.svc-offer__grid{ display:grid; grid-template-columns:1.6fr .9fr; gap:clamp(20px,2.6vw,50px); align-items:center }
+.svc-offer h2{ font-size:clamp(28px,3.6vw,68px); font-weight:800; letter-spacing:-.04em; line-height:1.02;
+  color:#fff; margin:0 0 clamp(16px,1.6vw,30px) }
+.svc-offer p{ font-size:clamp(12.5px,.83vw,16px); line-height:1.6; color:rgba(255,255,255,.85);
+  max-width:64ch; margin:0 0 clamp(20px,2vw,38px) }
+.svc-offer__card{ background:var(--acc); border-radius:var(--rl); padding:clamp(20px,2vw,38px);
+  color:#000 }
+.svc-offer__card img{ width:clamp(70px,6vw,120px); height:auto; display:block; margin-bottom:14px }
+.svc-offer__card b{ font-size:clamp(12px,.83vw,16px); line-height:1.35; display:block }
+
+/* ---------- кейсы строками ---------- */
+.svc-cases{ display:grid; gap:clamp(14px,1.5vw,28px); margin-top:clamp(24px,2.6vw,50px); }
+.svc-case{ display:grid; grid-template-columns:1fr 1.1fr; gap:clamp(18px,2.2vw,44px);
+  background:var(--soft); border-radius:var(--rl); padding:clamp(20px,2.2vw,44px); align-items:center; }
+.svc-case:nth-child(even){ background:var(--acc) }
+.svc-case__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a }
+.svc-case:nth-child(even) .svc-case__n{ color:rgba(0,0,0,.5) }
+.svc-case__t{ font-size:clamp(19px,1.7vw,32px); font-weight:800; letter-spacing:-.035em; margin:8px 0 6px }
+.svc-case__k{ font-size:clamp(11.5px,.7vw,13.5px); color:#5c6067 }
+.svc-case:nth-child(even) .svc-case__k{ color:rgba(0,0,0,.65) }
+.svc-case__y{ font-size:clamp(13px,.95vw,18px); font-weight:800; margin:clamp(12px,1.2vw,22px) 0 }
+.svc-case p{ font-size:clamp(11.5px,.73vw,14px); line-height:1.6; color:#5c6067; margin:0; max-width:60ch }
+.svc-case:nth-child(even) p{ color:rgba(0,0,0,.75) }
+.svc-case__ph{ border-radius:var(--r); overflow:hidden; background:#e6e2da; aspect-ratio:16/10;
+  display:flex; align-items:center; justify-content:center; color:#8d9096;
+  font-size:clamp(11px,.68vw,13px); text-align:center; padding:16px }
+.svc-case__ph img{ width:100%; height:100%; object-fit:cover; object-position:top }
+
+/* ---------- полоса CMS ---------- */
+.svc-cms{ position:relative; color:#fff; padding:clamp(44px,5vw,96px) 0;
+  background:#1a1712 center/cover no-repeat }
+.svc-cms::before{ content:""; position:absolute; inset:0; background:rgba(0,0,0,.5) }
+.svc-cms .container{ position:relative; z-index:2 }
+.svc-cms h2{ font-size:clamp(22px,2.6vw,48px); font-weight:800; letter-spacing:-.035em;
+  line-height:1.1; margin:0 0 clamp(24px,2.6vw,50px); max-width:24ch }
+.svc-cms__logos{ display:flex; flex-wrap:wrap; gap:clamp(18px,2.6vw,52px); align-items:center;
+  margin-bottom:clamp(24px,2.6vw,50px); font-size:clamp(15px,1.5vw,28px); font-weight:800;
+  letter-spacing:-.02em; opacity:.95 }
+.svc-cms__row{ display:grid; grid-template-columns:minmax(140px,1fr) 3fr; gap:clamp(16px,2vw,40px);
+  align-items:start }
+.svc-cms__row .label{ color:#fff; font-size:clamp(11.5px,.73vw,14px); font-weight:700 }
+
+/* ---------- преимущества строками ---------- */
+.svc-adv{ display:grid; gap:0; margin-top:clamp(24px,2.6vw,50px) }
+.svc-adv__i{ display:grid; grid-template-columns:auto minmax(0,1fr) minmax(0,1.2fr);
+  gap:clamp(16px,2vw,40px); padding:clamp(22px,2.4vw,46px) 0; border-top:1px solid var(--line) }
+.svc-adv__n{ font-size:clamp(11px,.72vw,14px); font-weight:700; color:#9a9a9a; min-width:34px }
+.svc-adv__t{ font-size:clamp(17px,1.5vw,28px); font-weight:800; letter-spacing:-.03em; line-height:1.15;
+  margin:0 0 12px }
+.svc-adv__i p{ font-size:clamp(11.5px,.73vw,14px); line-height:1.6; color:#5c6067; margin:0 0 10px; max-width:70ch }
+.svc-adv__i p b{ color:var(--dark) }
+
+/* ---------- мобильная версия ---------- */
+@media (max-width:1080px){
+  .svc-hero__in{ grid-template-columns:1fr; padding-top:clamp(88px,14vw,120px) }
+  .svc-hero__art{ order:-1 }
+  .svc-hero__art img{ width:min(62%,300px) }
+  .svc-cards,.svc-tars{ grid-template-columns:repeat(2,1fr) }
+  .svc-dark__row,.svc-prices__head,.svc-cms__row{ grid-template-columns:1fr }
+  .svc-case,.svc-offer__grid{ grid-template-columns:1fr }
+  .svc-adv__i{ grid-template-columns:auto 1fr; }
+  .svc-adv__i > *:nth-child(3){ grid-column:2 }
+}
+@media (max-width:760px){
+  .svc-hero__feats{ grid-template-columns:1fr; gap:14px }
+  .svc-hero h1,.svc-hero .heading1{ font-size:clamp(26px,7.4vw,34px) !important; max-width:none }
+  .svc-hero__act .btn{ width:100%; justify-content:center }
+  .svc-cards,.svc-tars{ grid-template-columns:1fr }
+  .svc-stack__c{ position:static; padding:22px 18px }
+  .svc-claim{ font-size:clamp(20px,5.6vw,26px); max-width:none }
+  .svc-h2,.svc-offer h2,.svc-cms h2{ font-size:clamp(22px,6.4vw,30px) }
+  .svc-case{ padding:18px }
+  .svc-case__ph{ aspect-ratio:16/11 }
+  .svc-pills span{ font-size:12px; padding:9px 15px }
+  .svc-note{ flex-direction:column; align-items:flex-start; gap:14px }
+  .svc-adv__i{ grid-template-columns:1fr; gap:10px }
+  .svc-adv__n{ min-width:0 }
+}
+
+/* ---------- шапка на светлом первом экране услуги ---------- */
+body.svc-page .hdr{ color:var(--dark); }
+body.svc-page .hdr__logo,body.svc-page .hdr__phone,body.svc-page .hdr__nav > a,
+body.svc-page .hdr__item > a{ color:var(--dark); }
+body.svc-page .hdr__soc a{ border-color:rgba(0,0,0,.25); color:var(--dark); }
+body.svc-page .hdr__soc a:hover{ background:var(--dark); color:#fff; border-color:var(--dark); }
+body.svc-page .hdr__burger{ background:var(--dark); }
+body.svc-page .hdr.hdr--stuck{ background:rgba(255,255,255,.94); }
+/* кнопки первого экрана — тёмный текст на светлом */
+.svc-hero .btn--outline{ color:var(--dark) !important; border-color:rgba(0,0,0,.3) !important; }
+.svc-hero .btn--outline:hover{ background:var(--dark); color:#fff !important; border-color:var(--dark) !important; }
+/* заголовок: не даём разрастаться */
+.svc-hero h1,.svc-hero .heading1{ font-size:clamp(26px,2.9vw,50px) !important; max-width:20ch; }
+
+/* .container из скина перебивал вертикальные отступы первого экрана */
+body.inner-page .container.svc-hero__in{
+  padding-top:clamp(104px,9.4vw,180px); padding-bottom:clamp(40px,4.4vw,84px);
+}
+@media (max-width:1080px){
+  body.inner-page .container.svc-hero__in{ padding-top:clamp(92px,15vw,130px) }
+}
