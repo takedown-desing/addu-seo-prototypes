@@ -532,3 +532,32 @@ body.menu-open .hdr__burger i:last-child{ transform:translateY(-3.5px) rotate(-4
 .metric-case:hover .metric-case__ph img{ transform:scale(1.04); }
 .metric-case--stub{ border:1.6px dashed var(--line); background:transparent; }
 .metric-case--stub .metric-case__title{ color:#8d9096; }
+
+/* ---------- оформление текстовых блоков (было: голый заголовок + абзац) ---------- */
+.textcard{ background:var(--soft); border-radius:var(--rl); padding:clamp(20px,2vw,38px);
+  margin:clamp(14px,1.4vw,26px) 0 clamp(26px,2.6vw,50px); }
+.textcard p{ margin:0 0 12px; max-width:84ch; }
+.textcard p:last-child{ margin-bottom:0; }
+.textcard__lead{ font-size:clamp(14px,1.05vw,20px) !important; font-weight:700; letter-spacing:-.02em;
+  line-height:1.45; color:var(--dark); }
+
+.infocard{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:clamp(12px,1.2vw,22px); background:var(--dark); border-radius:var(--rl);
+  padding:clamp(20px,2vw,38px); margin:clamp(14px,1.4vw,26px) 0 clamp(26px,2.6vw,50px); }
+.infocard__i{ display:grid; grid-template-columns:auto 1fr; gap:12px; align-items:start; }
+.infocard__i i{ width:34px; height:34px; border-radius:50%; background:rgba(255,255,255,.1);
+  color:var(--acc); display:flex; align-items:center; justify-content:center; font-style:normal;
+  font-size:15px; flex:0 0 auto; }
+.infocard__i span{ color:rgba(255,255,255,.85); font-size:clamp(12.5px,.8vw,15px); line-height:1.45; }
+
+.pricecard{ background:var(--acc); border-radius:var(--rl); padding:clamp(20px,2vw,38px);
+  margin:clamp(14px,1.4vw,26px) 0 clamp(26px,2.6vw,50px); }
+.pricecard__lab{ font-size:clamp(10.5px,.63vw,12.5px); font-weight:700; letter-spacing:.06em;
+  text-transform:uppercase; color:rgba(0,0,0,.55); margin-bottom:10px; }
+.pricecard p{ font-size:clamp(13px,.9vw,17px); line-height:1.5; color:var(--dark); margin:0 0 10px;
+  max-width:80ch; font-weight:600; }
+.pricecard .btn{ margin-top:8px; background:var(--dark); color:#fff; border-color:var(--dark); }
+
+.cta-horizontal__lead{ font-size:clamp(12.5px,.8vw,15px); color:rgba(0,0,0,.72); margin:8px 0 0; max-width:70ch; }
+.cta-horizontal__sub{ font-size:clamp(11.5px,.7vw,13.5px); color:rgba(0,0,0,.6); margin:6px 0 0; max-width:70ch; }
+h2.cta-horizontal__title{ margin:0; text-transform:none; }
