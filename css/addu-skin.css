@@ -561,3 +561,9 @@ body.menu-open .hdr__burger i:last-child{ transform:translateY(-3.5px) rotate(-4
 .cta-horizontal__lead{ font-size:clamp(12.5px,.8vw,15px); color:rgba(0,0,0,.72); margin:8px 0 0; max-width:70ch; }
 .cta-horizontal__sub{ font-size:clamp(11.5px,.7vw,13.5px); color:rgba(0,0,0,.6); margin:6px 0 0; max-width:70ch; }
 h2.cta-horizontal__title{ margin:0; text-transform:none; }
+
+/* блоки, добавленные по итогам разбора конкурентов */
+.newmark--res{ background:var(--dark); color:#fff; }
+.new-block--res .why{ color:#5d6470; }
+.small-note{ font-size:clamp(11.5px,.72vw,13.5px); color:#6b6f76; line-height:1.55;
+  margin-top:clamp(10px,1vw,18px); }
