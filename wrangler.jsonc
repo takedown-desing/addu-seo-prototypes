@@ -1,0 +1,13 @@
+{
+  // Имя должно совпадать с Project name в панели Cloudflare
+  "name": "addu-seo-prototypes",
+  "main": "worker.js",
+  "compatibility_date": "2026-05-28",
+  "assets": {
+    // Папку собирает build-cf.sh: сайт переезжает из /addu-seo-prototypes/ в корень
+    "directory": "./dist",
+    "binding": "ASSETS",
+    // Worker должен отработать раньше отдачи файлов, иначе пароль не спросят
+    "run_worker_first": true
+  }
+}

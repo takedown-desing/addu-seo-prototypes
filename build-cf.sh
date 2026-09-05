@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Сборка прототипа под Cloudflare Pages.
+# Сборка прототипа под Cloudflare (Worker со статическими ассетами).
 # На GitHub Pages сайт лежит в подпапке /addu-seo-prototypes/, на Cloudflare — в корне,
 # поэтому абсолютные пути правим на этапе сборки. Исходники в репозитории не меняются.
 set -euo pipefail
@@ -9,7 +9,7 @@ rm -rf "$OUT"
 mkdir -p "$OUT"
 
 for item in *; do
-  case "$item" in dist|functions|build-cf.sh) continue ;; esac
+  case "$item" in dist|functions|build-cf.sh|worker.js|wrangler.jsonc|.gitignore) continue ;; esac
   cp -R "$item" "$OUT/"
 done
 
